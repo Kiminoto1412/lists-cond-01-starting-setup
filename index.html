@@ -20,14 +20,13 @@
       <h2>My course goals</h2>
       <input type="text" v-model="enteredGoal"/>
       <button @click="addGoal">Add Goal</button>
-      <!-- v-if v-else-if v-else ต้องวางต่อกันเลยถึงจะใช้ได้ -->
-      <p v-if="goals.length === 0">
+      <!-- if we inspect that will have all show component but display:none if condition is false -->
+      <p v-show="goals.length === 0">
         No goals have been added yet - please start adding some!
       </p>
-      <ul v-else-if="goals.length >0">
+      <ul v-show="goals.length >0">
         <li>Goal</li>
       </ul>
-      <p v-else>...</p>
     </section>
   </body>
 </html>
