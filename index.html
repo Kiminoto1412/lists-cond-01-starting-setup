@@ -18,14 +18,21 @@
     </header>
     <section id="user-goals">
       <h2>My course goals</h2>
-      <input type="text" v-model="enteredGoal"/>
+      <input type="text" v-model="enteredGoal" />
       <button @click="addGoal">Add Goal</button>
       <!-- v-if v-else-if v-else ต้องวางต่อกันเลยถึงจะใช้ได้ -->
       <p v-if="goals.length === 0">
         No goals have been added yet - please start adding some!
       </p>
       <ul v-else>
-        <li v-for="(goal, index) in goals" key="index">{{goal}} - {{index}}</li>
+        <li
+          v-for="(goal, index) in goals"
+          key="goal"
+          @click="removeGoal(index)"
+        >
+          <p>{{goal}} - {{index}}</p>
+          <input type="text" @click.stop>
+        </li>
       </ul>
       <!-- loop object -->
       <!-- <ul>
